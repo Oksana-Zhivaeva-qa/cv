@@ -10,7 +10,7 @@ body_create = {
 
 body = {
     "pokemon_id": "305966",
-    "name": "New Name",
+    "name": "Бульбазавр",
     }
 
 body_confirmation = {
@@ -21,12 +21,12 @@ pokemon_id = response_create.json[id]
 print(pokemon_id)
 
 
-'''response_create = requests.post(url = f'{URL}/pokemons', headers = HEADER, json = body_create)
-print(response_create.text)'''
+response_create = requests.post(url = f'{URL}/pokemons', headers = HEADER, json = body_create)
+print(response_create.text)
 
 
-'''response = requests.put(url = f'{URL}/pokemons', headers = HEADER, json = body)
-print(response.text)'''
+response = requests.put(url = f'{URL}/pokemons', headers = HEADER, json = body)
+print(response.text)
 
 response_confirmation = requests.Path(url = f'{URL}/trainers/add_pokeball', headers = HEADER, json = body_confirmation)
 print(response_confirmation.text)

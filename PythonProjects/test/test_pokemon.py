@@ -12,10 +12,10 @@ def test_status_code():
 
 def test_part_of_response():
     response_get = requests.get(url = f'{URL}/pokemons',params = {'trainer_id': TRAINER_ID})
-    assert response_get.json()['data'][0]['name']=='Бульбазвар' 
+    assert response_get.json()['data'][0]['name']=='Бульбазfвр' 
 
 
-@pytest.mark.parametrize('key, value,[('name', 'Бульбазавр'),('trainer_id', TRAINER_ID), ('pokemon_id', '26789')])
+@pytest.mark.parametrize('key, value', [('name', 'Бульбазавр'), ('trainer_id', TRAINER_ID), ('pokemon_id', '26789')])
 def test_parametrize(key,value):   
     response_parametrize = requests.get(url = f'{URL}/pokemons',params = {'trainer_id': TRAINER_ID})                    
-    assert_response_parametrize.json()['data'][0][key] == valye
+    assert response_parametrize.json()['data'][0][key] == value
